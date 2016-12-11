@@ -1,6 +1,8 @@
 # WARNING
 
-This project has been renamed, use [structural-sharing](https://github.com/mperdikeas/structural-sharing) instead.
+This project has been renamed, use [structural-sharing](https://www.npmjs.com/package/structural-sharing) instead
+([js-structural-sharing] (https://github.com/mperdikeas/js-structural-sharing) in github).
+
 
 # js-zero-structural-sharing
 Tests that two objects (recursively) have zero structural sharing. In other words, nowhere do they access a common memory location.
