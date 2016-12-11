@@ -1,7 +1,7 @@
 # WARNING
 
 This project has been renamed, use [structural-sharing](https://www.npmjs.com/package/structural-sharing)
-instead &mdash; [js-structural-sharing] (https://github.com/mperdikeas/js-structural-sharing) in github.
+instead &mdash; [js-structural-sharing](https://github.com/mperdikeas/js-structural-sharing) in github.
 
 
 # js-zero-structural-sharing
