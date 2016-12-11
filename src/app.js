@@ -16,7 +16,6 @@ if (!global._babelPolyfill) // https://github.com/s-panferov/awesome-typescript-
 // ... will print 'undefined' without the the babel-polyfill being required.
 
 
-import 'babel-polyfill';
 import {assert} from 'chai';
 import _        from 'lodash';
 import {properties} from 'obj-properties';
