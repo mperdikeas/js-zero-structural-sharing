@@ -1,3 +1,7 @@
+# WARNING
+
+This project has been renamed, use [structural-sharing](https://github.com/mperdikeas/structural-sharing) instead.
+
 # js-zero-structural-sharing
 Tests that two objects (recursively) have zero structural sharing. In other words, nowhere do they access a common memory location.
 
