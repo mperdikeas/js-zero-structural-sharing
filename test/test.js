@@ -6,7 +6,6 @@ import {assert} from 'chai';
 import {shareMemory} from '../lib/index.js';
 
 describe('shareMemory', function () {
-    if (false)
     it('should work with primitives'
        , function () {
            assert.isFalse(shareMemory(0, 0));
@@ -32,36 +31,30 @@ describe('shareMemory', function () {
            const b = {i: 1, j:2, foo: a};
            assert.isTrue(shareMemory(a, b));
            const b2 = {i: 1, j:2, zoo: {foo: a}};
-           assert.isTrue(shareMemory(a, b2));           
+           assert.isTrue(shareMemory(a, b2));
        });
     it('case 2'
        , function () {
            const o = {};
            const a = [o];
            assert.isTrue(shareMemory(o, a));
-       });                 
+       });
+    it('case 3'
+       , function () {
+           const o = {};
+           const a = [o];
+           assert.isTrue(shareMemory(o, a));
+       });
+    it('case 4'
+       , function () {
+           this.timeout(10000);
+           const o = {};
+           const a1 = {a1: {a2: {v:1, y:2}, a3: o}, a4: [1,2,3,4]};
+           const a2 = {a1: {a2: [1, 2,3, [1, 3, [1, 2, o]]]}, a4: [1,2,3,4]};           
+           assert.isTrue(shareMemory(o, a1));
+           assert.isTrue(shareMemory(o, a2));
+           assert.isTrue(shareMemory(a1, a2));           
+       });
 });
 
 
-const TEST_IF_STACK_TRACE_LINE_NUMBERS_ARE_CORRECTLY_REPORTED = false;
-
-if (TEST_IF_STACK_TRACE_LINE_NUMBERS_ARE_CORRECTLY_REPORTED)
-describe('between', function () {
-    it('should work' , function () {
-        assert.isTrue(!between(-0.00000000001, 0, 1)); 
-        assert.isTrue( between(0,0,1));
-        assert.isTrue( between(0.9999,0,1));
-        assert.isTrue(!between(1,1,0,1));
-        assert.isTrue( between(2,1,3));
-        assert.isTrue(!between(2,3,1));
-    });
-    it('do stack traces work?' , function () { 
-        assert.isTrue(false);
-    });
-    it('do stack traces work? (2)' , function () {
-        (new Point(0,0)).equals(new Point(1,1));
-    });
-    it('do stack traces work? (3)' , function () {
-        foo();
-    });            
-});
